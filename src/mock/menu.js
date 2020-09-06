@@ -100,6 +100,15 @@ const first = [{
   },
   children: []
 }, {
+  label: "号码列表",
+  path: '/editor',
+  component: 'views/util/ueditor',
+  icon: 'icon-caidan',
+  meta: {
+    i18n: 'ueditor',
+  },
+  children: []
+}, {
   label: "表单",
   path: '/form',
   component: 'views/util/form',

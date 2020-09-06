@@ -63,6 +63,7 @@ export default {
     table: '表格',
     crud: '模板',
     form: '表单',
+    ueditor: '号码列表',
     data: '数据展示',
     permission: '权限',
     top: '返回顶部',

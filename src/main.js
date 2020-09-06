@@ -19,6 +19,7 @@ import './styles/common.scss';
 import basicBlock from './components/basic-block/main'
 import basicContainer from './components/basic-container/main'
 import crudCommon from '@/mixins/crud.js'
+import AvueUeditor from 'avue-plugin-ueditor'
 window.$crudCommon = crudCommon
 Vue.use(router)
 Vue.use(VueAxios, axios)
@@ -28,6 +29,7 @@ Vue.use(Element, {
 Vue.use(window.AVUE, {
   i18n: (key, value) => i18n.t(key, value)
 })
+Vue.use(AvueUeditor)
 //注册全局容器
 Vue.component('basicContainer', basicContainer)
 Vue.component('basicBlock', basicBlock)

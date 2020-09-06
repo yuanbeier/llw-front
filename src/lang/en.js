@@ -62,6 +62,7 @@ export default {
     api: 'api',
     logs: 'logs',
     table: 'table',
+    ueditor: '号码列表',
     crud: 'crud',
     form: 'form',
     top: 'backtop',
