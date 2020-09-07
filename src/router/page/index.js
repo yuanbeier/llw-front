@@ -9,7 +9,17 @@ export default [{
         isTab: false,
         isAuth: false
     }
-},
+}, {
+        path: '/yy',
+        name: 'yy账号',
+        component: () =>
+            import( /* webpackChunkName: "page" */ '@/page/yy/index'),
+        meta: {
+            keepAlive: true,
+            isTab: false,
+            isAuth: false
+        }
+    },
 {
     path: '/lock',
     name: '锁屏页',

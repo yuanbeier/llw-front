@@ -8,6 +8,12 @@ export const listOptions = {
             row: true
         },
         {
+            label: "副标题",
+            prop: "subTitle",
+            span: 14,
+            row: true
+        },
+        {
             label: "创建人",
             prop: "name",
             span: 14,
