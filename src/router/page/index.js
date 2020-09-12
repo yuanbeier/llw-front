@@ -20,6 +20,17 @@ export default [{
             isAuth: false
         }
     },
+    {
+        path: '/yy/detail',
+        name: 'yy详情',
+        component: () =>
+            import( /* webpackChunkName: "page" */ '@/page/yy/detail'),
+        meta: {
+            keepAlive: true,
+            isTab: false,
+            isAuth: false
+        }
+    },
 {
     path: '/lock',
     name: '锁屏页',
