@@ -19,7 +19,7 @@ export const loginByUsername = (username, password,client_id,client_secret,scope
 })
 
 export const getUserInfo = () => request({
-    url: baseUrl + '/user/getUserInfo',
+    url: baseUrl + '/api/user/getUserInfo',
     method: 'get'
 });
 

@@ -62,8 +62,9 @@ const user = {
       return new Promise((resolve) => {
 
         loginByUsername(user.username, user.password,user.client_id,user.client_secret,user.scope,user.grant_type, userInfo.code, userInfo.redomStr).then(res => {
-          const data = res;
-          commit('SET_TOKEN', data);
+          const data = res.data;
+          console.log("data:"+data.access_token)
+          commit('SET_TOKEN', data.access_token);
           commit('DEL_ALL_TAG');
           commit('CLEAR_LOCK');
           resolve();
