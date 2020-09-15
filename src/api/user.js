@@ -1,14 +1,18 @@
 import request from '@/router/axios';
 import { baseUrl } from '@/config/env';
-export const loginByUsername = (username, password, code, redomStr) => request({
-    url: baseUrl + '/user/login',
+export const loginByUsername = (username, password,client_id,client_secret,scope,grant_type, code, redomStr) => request({
+    url: baseUrl + '/api/oauth/token',
     method: 'post',
     meta: {
         isToken: false
     },
-    data: {
+    params: {
         username,
         password,
+        client_id,
+        client_secret,
+        scope,
+        grant_type,
         code,
         redomStr
     }

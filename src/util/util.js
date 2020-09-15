@@ -1,4 +1,10 @@
 import { validatenull } from './validate'
+import CryptoJS from 'crypto-js/crypto-js'
+
+// 默认的 KEY 与 iv 如果没有给
+const KEY = CryptoJS.enc.Utf8.parse("1234567887654321");
+const IV = CryptoJS.enc.Utf8.parse('1234567887654321');
+
 //表单序列化
 export const serialize = data => {
     let list = [];
@@ -79,6 +85,7 @@ export const encryption = (params) => {
         data,
         type,
         param,
+        // eslint-disable-next-line no-unused-vars
         key
     } = params;
     let result = JSON.parse(JSON.stringify(data));
@@ -87,13 +94,31 @@ export const encryption = (params) => {
             result[ele] = btoa(result[ele]);
         })
     } else if (type == 'Aes') {
+        let key = KEY
+        let iv = IV
+        if (params.key) {
+            key = CryptoJS.enc.Utf8.parse(params.key);
+            iv = CryptoJS.enc.Utf8.parse(params.key);
+        }
+
         param.forEach(ele => {
-            result[ele] = window.CryptoJS.AES.encrypt(result[ele], key).toString();
+            let srcs = CryptoJS.enc.Utf8.parse(result[ele]);
+            var encrypted = CryptoJS.AES.encrypt(srcs, key, {
+                iv: iv,
+                mode: CryptoJS.mode.CBC,
+                padding: CryptoJS.pad.ZeroPadding
+            });
+            // console.log("-=-=-=-", encrypted.ciphertext)
+            //return CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
+            //result[ele] = window.CryptoJS.AES.encrypt(result[ele], key).toString();
+            result[ele] = CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
         })
 
     }
     return result;
 };
+
+
 
 
 /**

@@ -7,7 +7,7 @@ import crud from './crud';
  * mock是否开启模拟数据拦截
  */
 
-user({ mock: true });
+user({ mock: false });
 
 menu({ mock: true });
 

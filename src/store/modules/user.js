@@ -46,15 +46,23 @@ const user = {
   actions: {
     //根据用户名登录
     LoginByUsername ({ commit }, userInfo) {
+      const scope = `pc` ;
+      const client_id = `1666367FA3BA4E319588EA08B6E27279` ;
+      const client_secret = `lBTqrKS0kZixOFXeZ0HRng==` ;
+      userInfo.client_id = client_id;
+      userInfo.client_secret = client_secret;
+      userInfo.scope = scope;
+      userInfo.grant_type = 'password'
       const user = encryption({
         data: userInfo,
         type: 'Aes',
-        key: 'avue',
-        param: ['useranme', 'password']
+        key: '1234567887654321',
+        param: ['password']
       });
       return new Promise((resolve) => {
-        loginByUsername(user.username, user.password, userInfo.code, userInfo.redomStr).then(res => {
-          const data = res.data.data;
+
+        loginByUsername(user.username, user.password,user.client_id,user.client_secret,user.scope,user.grant_type, userInfo.code, userInfo.redomStr).then(res => {
+          const data = res;
           commit('SET_TOKEN', data);
           commit('DEL_ALL_TAG');
           commit('CLEAR_LOCK');
