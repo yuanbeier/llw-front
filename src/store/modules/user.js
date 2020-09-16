@@ -68,7 +68,9 @@ const user = {
           commit('DEL_ALL_TAG');
           commit('CLEAR_LOCK');
           resolve();
-        })
+        }).catch(error => {
+            console.log("error:"+ error);
+        });
       })
     },
     //根据手机号登录
