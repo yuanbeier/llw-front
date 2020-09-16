@@ -15,7 +15,11 @@ export const loginByUsername = (username, password,client_id,client_secret,scope
         grant_type,
         code,
         redomStr
+    },
+    headers: {
+        'Content-Type': 'application/json;charset=UTF-8'
     }
+
 })
 
 export const getUserInfo = () => request({

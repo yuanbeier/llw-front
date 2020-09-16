@@ -15,13 +15,13 @@ router.beforeEach((to, from, next) => {
   const isMenu = meta.menu === undefined ? to.query.menu : meta.menu;
   store.commit('SET_IS_MENU', isMenu === undefined);
   if (getToken()) {
-    console.log('to.path:' + to.path);
     if (store.getters.isLock && to.path != lockPage) { //如果系统激活锁屏，全部跳转到锁屏页
       next({ path: lockPage })
     } else if (to.path === '/login') { //如果登录成功访问登录页跳转到主页
       next({ path: '/' })
     } else {
       //如果用户信息为空则获取用户信息，获取用户信息失败，跳转到登录页
+      console.log('to.path:' + to.path);
       if (store.getters.roles.length === 0) {
         store.dispatch('GetUserInfo').then(() => {
           next({ ...to, replace: true })
@@ -31,6 +31,7 @@ router.beforeEach((to, from, next) => {
           })
         })
       } else {
+        console.log('to.path:' + to.path);
         const value = to.query.src || to.fullPath;
         const label = to.query.name || to.name;
         const meta = to.meta || router.$avueRouter.meta || {};

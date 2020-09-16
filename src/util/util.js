@@ -122,7 +122,7 @@ export const encryption = (params) => {
  * AES 解密 ：字符串 key iv  返回base64
  *
  */
-export function Decrypt(word, keyStr, ivStr) {
+export function decrypt(word, keyStr, ivStr) {
     let key  = KEY
     let iv = IV
 
