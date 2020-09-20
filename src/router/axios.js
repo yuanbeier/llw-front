@@ -34,9 +34,11 @@ axios.interceptors.request.use(config => {
     config.headers[website.Authorization] = 'Bearer ' + getToken() // 让每个请求携带token--['Authorization']为自定义key 请根据实际情况自行修改
   }
   //headers中配置serialize为true开启序列化
-  if (config.method === 'post' && meta.isSerialize === true) {
-    config.data = serialize(config.data);
+  if ( meta.isSerialize === true) {
+    //config.data = serialize(config.data);
+    config.data = JSON.stringify(config.data)
   }
+  console.log("config:" + config.data)
   return config
 }, error => {
   return Promise.reject(error)

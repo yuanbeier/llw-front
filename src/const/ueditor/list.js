@@ -2,6 +2,15 @@ export const listOptions = {
     dialogFullscreen:true,
     column: [
         {
+            label: "id",
+            prop: "id",
+            span: 14,
+            row: true,
+            hide: true,
+            editDisplay:false,
+            addDisplay:false
+        },
+        {
             label: "标题",
             prop: "title",
             span: 14,
@@ -15,23 +24,26 @@ export const listOptions = {
         },
         {
             label: "创建人",
-            prop: "name",
+            prop: "createName",
             span: 14,
-            row: true
+            row: true,
+            editDisplay:false,
+            addDisplay:false
         },
         {
             label: "文档类容",
             prop: "content",
             formslot:true,
             span: 14,
-            row: true
+            hide: true
         },
         {
             label: "创建时间",
             prop: "createTime",
             type: "date",
             span: 14,
-            row: true
+            editDisplay:false,
+            addDisplay:false
         }
     ]
 }

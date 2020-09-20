@@ -19,7 +19,6 @@ export const loginByUsername = (username, password,client_id,client_secret,scope
     headers: {
         'Content-Type': 'application/json;charset=UTF-8'
     }
-
 })
 
 export const getUserInfo = () => request({
@@ -33,7 +32,7 @@ export const refeshToken = () => request({
 })
 
 export const getMenu = (type = 0) => request({
-    url: baseUrl + '/user/getMenu',
+    url: baseUrl + '/men/getMenu',
     method: 'get',
     data: {
         type
@@ -41,20 +40,17 @@ export const getMenu = (type = 0) => request({
 });
 
 export const getTopMenu = () => request({
-    url: baseUrl + '/user/getTopMenu',
+    url: baseUrl + '/men/getTopMenu',
     method: 'get'
 });
 
 export const sendLogs = (list) => request({
-    url: baseUrl + '/user/logout',
+    url: baseUrl + '/api/user/logout',
     method: 'post',
     data: list
 })
 
 export const logout = () => request({
-    url: baseUrl + '/user/logout',
-    meta: {
-        isToken: false
-    },
+    url: baseUrl + '/api/user/logout',
     method: 'get'
 })

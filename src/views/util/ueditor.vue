@@ -3,9 +3,15 @@
         <h3>号码列表</h3>
         <avue-crud :option="option"
                    :page="page"
+                   @row-save="handleAdd"
+                   @row-update="handleUpdate"
+                   @row-del="handleDel"
+                   :table-loading="tableLoading"
+                   @refresh-change="hadnleQuery"
+                   v-model="article"
                    :data="data">
             <template slot-scope="scope" slot="contentForm">
-                <avue-ueditor v-model="scope.value" :options="options"></avue-ueditor>
+                <avue-ueditor v-model="article.content" :options="options"></avue-ueditor>
 
             </template>
         </avue-crud>
@@ -14,10 +20,14 @@
 
 <script>
     import { listOptions } from '@/const/ueditor/list'
+    import {list,del,add,update} from '@/api/crud/index'
     export default {
         data() {
             return {
+                tableLoading:false,
                 article:{},
+                queryParam:{
+                },
                 options: {
                     //普通图片上传
                     action: "https://avuejs.com/imgupload",
@@ -27,42 +37,46 @@
                         url: "url"
                     }
                 },
-                page: {
-                    total: 122
-                },
-                data: [
-                    {
-                        title: "title2",
-                        subTitle: "subtitle2",
-                        name: "123",
-                        content: "你好",
-                        createTime: "2019-01-01",
-                    },
-                    {
-                        title: "title3",
-                        subTitle: "subtitle2",
-                        name: "123",
-                        content: "你好",
-                        createTime: "2019-01-01",
-                    },
-
-                    {
-                        title: "title4",
-                        subTitle: "subtitle2",
-                        name: "123",
-                        content: "你好",
-                        createTime: "2019-01-01",
-                    },
-                    {
-                        title: "title6",
-                        subTitle: "subtitle2",
-                        name: "123",
-                        content: "你好",
-                        createTime: "2019-01-01",
-                    }
-                ],
+                page: {},
+                data: [],
                 option:listOptions
             };
+        },
+        created() {
+            this.hadnleQuery()
+        },
+        methods:{
+            handleAdd(row,done,loading){
+                add(row).then(()=>{
+                    this.hadnleQuery();
+                    done()
+                }).catch(()=>{
+                    loading = false;
+                })
+            },
+            hadnleQuery(){
+                this.tableLoading = true
+                list(this.queryParam).then( response => {
+                    this.tableLoading = false
+                    console.log(response)
+                    this.data = response.data
+                })
+            },
+            handleUpdate(row,index,done,loading){
+                console.log("handleUpdate:row:="+JSON.stringify(row))
+                update(index,row).then(()=>{
+                    this.hadnleQuery();
+                    done()
+                }).catch(()=>{
+                    loading = false;
+                })
+            },
+            handleDel(row,index){
+                del(row["id"]).then(()=>{
+                    this.hadnleQuery();
+                }).catch(()=>{
+                })
+            },
         }
     };
 </script>

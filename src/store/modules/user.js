@@ -147,7 +147,7 @@ const user = {
     GetTopMenu () {
       return new Promise(resolve => {
         getTopMenu().then((res) => {
-          const data = res.data.data || []
+          const data = res.data || []
           resolve(data)
         })
       })
