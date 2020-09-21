@@ -15,7 +15,13 @@ export const list = (data) => {
     }
   })
 }
+
 export const del = (id) => request.delete(baseUrl + '/api/article/', {
+  params: {
+    id
+  }
+})
+export const get = (id) => request.get(baseUrl + '/api/yy/', {
   params: {
     id
   }

@@ -21,7 +21,7 @@ export default [{
         }
     },
     {
-        path: '/yy/detail',
+        path: '/yy/detail/:id',
         name: 'yy详情',
         component: () =>
             import( /* webpackChunkName: "page" */ '@/page/yy/detail'),
@@ -79,7 +79,7 @@ export default [{
 {
     path: '/',
     name: '主页',
-    redirect: '/wel'
+    redirect: '/yy'
 },
 {
     path: '/myiframe',

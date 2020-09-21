@@ -3,135 +3,147 @@
         <el-header style="height: 200px">
             <el-row>
                 <div>
-                    <audio src="/img/yy/music.mp3" loop autoplay ref="au"></audio>
+                    <audio ref="audio" controls  src="/img/yy/music.mp3" loop="loop"  autoplay="autoplay" hidden="true">
+                    </audio>
                 </div>
             </el-row>
         </el-header>
         <el-main>
-            <el-row>
-                <el-col :span="4" :offset="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary" href="yy/detail">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-col :span="4" :offset="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
+<!--            <el-row>-->
+<!--                <el-col :span="4" :offset="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary" href="yy/detail">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--            </el-row>-->
+<!--            <el-row>-->
+<!--                <el-col :span="4" :offset="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
 
-            </el-row>
-            <el-row>
-
-                <el-col :span="4" :offset="4">
+<!--            </el-row>-->
+<!--            <el-row>-->
+<!--                <el-col :span="4" :offset="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--                <el-col :span="4">-->
+<!--                    <div class="div_box">-->
+<!--                        <el-row>-->
+<!--                            <el-link type="primary">出租/YY号码/频道</el-link>-->
+<!--                        </el-row>-->
+<!--                        <el-row>-->
+<!--                            <span>包/月/出/租</span>-->
+<!--                        </el-row>-->
+<!--                    </div>-->
+<!--                </el-col>-->
+<!--            </el-row>-->
+            <el-row v-for="(page,index) of pages" :key="index">
+                <el-col :span="4" v-for="(item,innerindex) of page" :key="item.id" :offset="innerindex == 0? 4:0">
                     <div class="div_box">
                         <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
+                            <el-link type="primary" target="_blank" :href="[detailURI +item.id]">{{item.title}}</el-link>
                         </el-row>
                         <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
-                        </el-row>
-                    </div>
-                </el-col>
-                <el-col :span="4">
-                    <div class="div_box">
-                        <el-row>
-                            <el-link type="primary">出租/YY号码/频道</el-link>
-                        </el-row>
-                        <el-row>
-                            <span>包/月/出/租</span>
+                            <span>{{item.subTitle}}</span>
                         </el-row>
                     </div>
                 </el-col>
@@ -141,16 +153,43 @@
 </template>
 
 <script>
+    import {listOut} from '@/api/crud/yy'
     export default {
         name: "yy",
-
-        methods: {
-            mounted: () => {
-                this.$nextTick(() => {
-                    this.$refs.au.play()
+        data(){
+            return {
+                listData: [],
+                detailURI:"yy/detail/"
+            }
+        },
+        mounted ()  {
+            this.$nextTick(() => {
+                this.init()
+            })
+        },
+        methods:{
+            init(){
+                  listOut().then( response => {
+                    console.log(response)
+                     this.listData = response.data
                 })
             }
+        },
+        computed:{
+            pages (){
+                const pages = []
+                console.log("listData:="+this.listData)
+                this.listData.forEach((item,index) => {
+                    const page = Math.floor( index / 4)
+                    if(!pages[page]){
+                        pages[page] = []
+                    }
+                    pages[page].push(item)
+                })
+                return pages
+            }
         }
+
     }
 </script>
 
