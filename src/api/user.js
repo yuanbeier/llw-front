@@ -1,7 +1,7 @@
 import request from '@/router/axios';
 import { baseUrl } from '@/config/env';
 export const loginByUsername = (username, password,client_id,client_secret,scope,grant_type, code, redomStr) => request({
-    url: baseUrl + '/api/oauth/token',
+    url: baseUrl + '/llw-back/oauth/token',
     method: 'post',
     meta: {
         isToken: false
@@ -22,7 +22,7 @@ export const loginByUsername = (username, password,client_id,client_secret,scope
 })
 
 export const getUserInfo = () => request({
-    url: baseUrl + '/api/user/getUserInfo',
+    url: baseUrl + '/llw-back/user/getUserInfo',
     method: 'get'
 });
 
@@ -45,12 +45,12 @@ export const getTopMenu = () => request({
 });
 
 export const sendLogs = (list) => request({
-    url: baseUrl + '/api/user/logout',
+    url: baseUrl + '/llw-back/user/logout',
     method: 'post',
     data: list
 })
 
 export const logout = () => request({
-    url: baseUrl + '/api/user/logout',
+    url: baseUrl + '/llw-back/user/logout',
     method: 'get'
 })

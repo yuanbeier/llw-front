@@ -5,7 +5,7 @@ import { baseUrl } from '@/config/env';
 export const listOut = (data) => {
   console.log(data);
   return request({
-    url: baseUrl + '/api/yy/list',
+    url: baseUrl + '/llw-back/yy/list',
     method: 'post',
     meta: {
       isSerialize: true
@@ -16,7 +16,7 @@ export const listOut = (data) => {
   })
 }
 
-export const get = (id) => request.get(baseUrl + '/api/yy/'+ id, {
+export const get = (id) => request.get(baseUrl + '/llw-back/yy/'+ id, {
 })
 
 

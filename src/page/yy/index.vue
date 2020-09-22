@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header style="height: 200px">
+        <el-header style="height: 77px">
             <el-row>
                 <div>
                     <audio ref="audio" controls  src="/img/yy/music.mp3" loop="loop"  autoplay="autoplay" hidden="true">
@@ -137,10 +137,10 @@
 <!--                </el-col>-->
 <!--            </el-row>-->
             <el-row v-for="(page,index) of pages" :key="index">
-                <el-col :span="4" v-for="(item,innerindex) of page" :key="item.id" :offset="innerindex == 0? 4:0">
+                <el-col xs="24" :lg="{span:4,offset:innerindex== 0?4:0}" :xl="['{span:4'+ ',offset:'+innerindex == 0? 4:0+'}']" v-for="(item,innerindex) of page" :key="item.id" >
                     <div class="div_box">
                         <el-row>
-                            <el-link type="primary" target="_blank" :href="[detailURI +item.id]">{{item.title}}</el-link>
+                            <el-link type="primary" target="_blank" :href="['yy/detail/' +item.id]">{{item.title}}</el-link>
                         </el-row>
                         <el-row>
                             <span>{{item.subTitle}}</span>
@@ -195,19 +195,20 @@
 
 <style scoped>
     .el-header {
-        background: url("/img/yy/head.png") no-repeat center;
+        /*background: url("/img/yy/head.png") no-repeat center ;*/
         color: #333;
         text-align: center;
+        background: url("/img/yy/dog.png") no-repeat center top ;
+
+        /*background-size:100% 100%;*/
     }
 
     .el-main {
         color: #333;
         text-align: center;
-        margin-top: 10px;
     }
 
     .el-main .el-col {
-        margin-top: 10px;
     }
 
     .div_box {

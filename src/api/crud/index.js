@@ -4,7 +4,7 @@ import { baseUrl } from '@/config/env';
 export const list = (data) => {
   console.log(data);
   return request({
-    url: baseUrl + '/api/article/list',
+    url: baseUrl + '/llw-back/article/list',
     method: 'post',
     meta: {
       isSerialize: true
@@ -16,18 +16,18 @@ export const list = (data) => {
   })
 }
 
-export const del = (id) => request.delete(baseUrl + '/api/article/', {
+export const del = (id) => request.delete(baseUrl + '/llw-back/article/', {
   params: {
     id
   }
 })
-export const get = (id) => request.get(baseUrl + '/api/yy/', {
+export const get = (id) => request.get(baseUrl + '/llw-back/yy/', {
   params: {
     id
   }
 })
 export const add = (data) => request({
-  url: baseUrl + '/api/article/add',
+  url: baseUrl + '/llw-back/article/add',
   method: 'post',
   meta: {
     isSerialize: true
@@ -38,7 +38,7 @@ export const add = (data) => request({
   }
 })
 export const update = (id, data) => request({
-  url: baseUrl + '/api/article',
+  url: baseUrl + '/llw-back/article',
   method: 'put',
   meta: {
     isSerialize: true

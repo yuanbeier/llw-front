@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header style="height: 200px">
+        <el-header style="height: 30px">
             <el-row>
                 <div>
                     <audio ref="audio" controls  src="/img/yy/music.mp3" loop="loop"  autoplay="autoplay" hidden="true">
@@ -53,7 +53,7 @@
 
 <style scoped>
     .el-header {
-        background: url("/img/yy/head.png") no-repeat center;
+        /*background: url("/img/yy/head.png") no-repeat center;*/
         color: #333;
         text-align: center;
     }
