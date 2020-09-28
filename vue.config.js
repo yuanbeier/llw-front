@@ -4,10 +4,10 @@ let baseUrl = '/'
 module.exports = {
   devServer: {
     disableHostCheck: true,
-    port: '8080',
+    port: '80',
     proxy: {
       '/llw-back': {
-        target: 'http://192.168.0.104:8080', //API服务器的地址
+        target: 'http://123.57.233.164', //API服务器的地址
         ws: false,  //代理websockets
         changeOrigin: false, // 如果接口跨域，需要进行这个参数配置，为true的话，请求的header将会设置为匹配目标服务器的规则（Access-Control-Allow-Origin）
         pathRewrite: {   //重写路径 比如'/api/aaa/ccc'重写为'/aaa/ccc'

@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header style="height: 30px">
+        <el-header style="height: 77px">
             <el-row>
                 <div>
                     <audio ref="audio" controls  src="/img/yy/music.mp3" loop="loop"  autoplay="autoplay" hidden="true">
@@ -42,7 +42,6 @@
                 get(this.id).then( response => {
                     console.log("response"+ response)
                     this.data = response.data
-                    console.log("this.data"+ this.data)
                     this.content = this.data.content
 
                 })
@@ -56,16 +55,15 @@
         /*background: url("/img/yy/head.png") no-repeat center;*/
         color: #333;
         text-align: center;
+        background: url("/img/yy/dog.png") no-repeat center top ;
     }
 
     .el-main {
         color: black;
         text-align: center;
-        margin-top: 10px;
     }
 
     .el-main .el-col {
-        margin-top: 10px;
     }
 
     .div_box {
