@@ -3,8 +3,8 @@
         <el-header style="height: 77px">
             <el-row>
                 <div>
-                    <audio ref="audio" controls  src="/img/yy/music.mp3" loop="loop"  autoplay="autoplay" hidden="true">
-                    </audio>
+<!--                    <audio ref="audio" controls  src="/img/yy/music.mp3" loop="loop"  autoplay="autoplay" hidden="true">-->
+<!--                    </audio>-->
                 </div>
             </el-row>
         </el-header>
