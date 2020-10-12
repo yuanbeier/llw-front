@@ -9,8 +9,10 @@ export default [{
     meta: {
       i18n: 'dashboard'
     },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/wel/index')
+    component: resolve =>
+        require(['@/views/wel/index'],resolve)
+      // import( /* webpackChunkName: "views" */ '@/views/wel/index')
+
   }, {
     path: 'dashboard',
     name: '控制台',
@@ -18,8 +20,9 @@ export default [{
       i18n: 'dashboard',
       menu: false,
     },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/wel/dashboard')
+    component: resolve =>
+        require(['@/views/wel/dashboard'],resolve)
+      //import( /* webpackChunkName: "views" */ '@/views/wel/dashboard')
   }]
 }, {
   path: '/form-detail',
@@ -30,8 +33,9 @@ export default [{
     meta: {
       i18n: 'detail'
     },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/util/form-detail')
+    component: resolve =>
+        require(['@/views/util/form-detail'],resolve)
+      // import( /* webpackChunkName: "views" */ '@/views/util/form-detail')
   }]
 }, {
   path: '/info',
@@ -43,15 +47,17 @@ export default [{
     meta: {
       i18n: 'info'
     },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/user/info')
+    component: resolve =>
+        require(['@/views/user/info'],resolve)
+      //import( /* webpackChunkName: "views" */ '@/views/user/info')
   }, {
     path: 'setting',
     name: '个人设置',
     meta: {
       i18n: 'setting'
     },
-    component: () =>
-      import( /* webpackChunkName: "views" */ '@/views/user/setting')
+    component:  resolve =>
+        require(['@/views/user/setting'],resolve)
+     // import( /* webpackChunkName: "views" */ '@/views/user/setting')
   }]
 }]

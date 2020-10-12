@@ -1,9 +1,10 @@
-import Layout from '@/page/index/'
+// import Layout from '@/page/index/'
 export default [{
     path: '/login',
     name: '登录页',
-    component: () =>
-        import( /* webpackChunkName: "page" */ '@/page/login/index'),
+    component:  resolve =>
+        require(['@/page/login/index'],resolve),
+        // import( /* webpackChunkName: "page" */ '@/page/login/index'),
     meta: {
         keepAlive: true,
         isTab: false,
@@ -12,8 +13,9 @@ export default [{
 }, {
         path: '/yy',
         name: 'yy账号',
-        component: () =>
-            import( /* webpackChunkName: "page" */ '@/page/yy/index'),
+        component: resolve =>
+            require(['@/page/yy/index'],resolve),
+            // import( /* webpackChunkName: "page" */ '@/page/yy/index'),
         meta: {
             keepAlive: true,
             isTab: false,
@@ -23,8 +25,9 @@ export default [{
     {
         path: '/yy/detail/:id',
         name: 'yy详情',
-        component: () =>
-            import( /* webpackChunkName: "page" */ '@/page/yy/detail'),
+        component:  resolve =>
+            require(['@/page/yy/detail'],resolve),
+            // import( /* webpackChunkName: "page" */ '@/page/yy/detail'),
         meta: {
             keepAlive: true,
             isTab: false,
@@ -34,8 +37,9 @@ export default [{
 {
     path: '/lock',
     name: '锁屏页',
-    component: () =>
-        import( /* webpackChunkName: "page" */ '@/page/lock/index'),
+    component:  resolve =>
+        require(['@/page/lock/index'],resolve),
+        //import( /* webpackChunkName: "page" */ '@/page/lock/index'),
     meta: {
         keepAlive: true,
         isTab: false,
@@ -44,8 +48,9 @@ export default [{
 },
 {
     path: '/404',
-    component: () =>
-        import( /* webpackChunkName: "page" */ '@/components/error-page/404'),
+    component: resolve =>
+        require(['@/components/error-page/404'],resolve),
+        // import( /* webpackChunkName: "page" */ '@/components/error-page/404'),
     name: '404',
     meta: {
         keepAlive: true,
@@ -56,8 +61,9 @@ export default [{
 },
 {
     path: '/403',
-    component: () =>
-        import( /* webpackChunkName: "page" */ '@/components/error-page/403'),
+    component: resolve =>
+        require(['@/components/error-page/403'],resolve),
+        // import( /* webpackChunkName: "page" */ '@/components/error-page/403'),
     name: '403',
     meta: {
         keepAlive: true,
@@ -67,8 +73,9 @@ export default [{
 },
 {
     path: '/500',
-    component: () =>
-        import( /* webpackChunkName: "page" */ '@/components/error-page/500'),
+    component: resolve =>
+        require(['@/components/error-page/500'],resolve),
+        // import( /* webpackChunkName: "page" */ '@/components/error-page/500'),
     name: '500',
     meta: {
         keepAlive: true,
@@ -83,7 +90,8 @@ export default [{
 },
 {
     path: '/myiframe',
-    component: Layout,
+    component: resolve =>
+        require(['@/page/index/'],resolve),
     redirect: '/myiframe',
     children: [{
         path: ":routerPath",

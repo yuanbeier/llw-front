@@ -44,6 +44,12 @@ export const listOptions = {
             span: 14,
             editDisplay:false,
             addDisplay:false
-        }
+        },
+        {
+            label: "排序号",
+            prop: "orderId",
+            span: 14,
+            row: true
+        },
     ]
 }
