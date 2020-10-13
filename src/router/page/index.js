@@ -11,10 +11,10 @@ export default [{
         isAuth: false
     }
 }, {
-        path: '/yy',
-        name: 'yy账号',
+        path: '/tt',
+        name: 'tt账号',
         component: resolve =>
-            require(['@/page/yy/index'],resolve),
+            require(['@/page/tt/index'],resolve),
             // import( /* webpackChunkName: "page" */ '@/page/yy/index'),
         meta: {
             keepAlive: true,
@@ -23,10 +23,10 @@ export default [{
         }
     },
     {
-        path: '/yy/detail/:id',
+        path: '/tt/detail/:id',
         name: 'yy详情',
         component:  resolve =>
-            require(['@/page/yy/detail'],resolve),
+            require(['@/page/tt/detail'],resolve),
             // import( /* webpackChunkName: "page" */ '@/page/yy/detail'),
         meta: {
             keepAlive: true,
@@ -86,7 +86,7 @@ export default [{
 {
     path: '/',
     name: '主页',
-    redirect: '/yy'
+    redirect: '/tt'
 },
 {
     path: '/myiframe',

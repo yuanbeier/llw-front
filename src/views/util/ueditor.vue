@@ -72,9 +72,15 @@
                 })
             },
             handleDel(row,index){
-                del(row["id"]).then(()=>{
-                    this.hadnleQuery();
-                }).catch(()=>{
+                this.$confirm(`此操作将永久删除序号【${index}】的数据, 是否继续?`, '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    del(row["id"]).then(()=>{
+                        this.hadnleQuery();
+                    }).catch(()=>{
+                    })
                 })
             },
         }

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import {get} from '@/api/crud/yy'
+    import {get} from '@/api/crud/tt'
     export default {
         name: "detail",
         data (){
@@ -60,7 +60,6 @@
 
     .el-main {
         color: black;
-        text-align: center;
     }
 
     .el-main .el-col {

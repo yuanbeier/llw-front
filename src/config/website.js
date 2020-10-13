@@ -5,7 +5,7 @@ export default {
   title: "Avue",
   logo: "B",
   key: 'llw',//配置主键,目前用于存储
-  indexTitle: 'yy',
+  indexTitle: 'tt',
   lockPage: '/lock',
   tokenTime: 6000,//token过期时间
   Authorization: 'Authorization',

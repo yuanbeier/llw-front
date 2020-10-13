@@ -140,7 +140,7 @@
                 <el-col xs="24" :lg="{span:4,offset:innerindex== 0?4:0}" :xl="['{span:4'+ ',offset:'+innerindex == 0? 4:0+'}']" v-for="(item,innerindex) of page" :key="item.id" >
                     <div class="div_box">
                         <el-row>
-                            <el-link type="primary" target="_blank" :href="['yy/detail/' +item.id]">{{item.title}}</el-link>
+                            <el-link type="primary" target="_blank" :href="['tt/detail/' +item.id]">{{item.title}}</el-link>
                         </el-row>
                         <el-row>
                             <span>{{item.subTitle}}</span>
@@ -153,13 +153,13 @@
 </template>
 
 <script>
-    import {listOut} from '@/api/crud/yy'
+    import {listOut} from '@/api/crud/tt'
     export default {
-        name: "yy",
+        name: "tt",
         data(){
             return {
                 listData: [],
-                detailURI:"yy/detail/"
+                detailURI:"tt/detail/"
             }
         },
         mounted ()  {
