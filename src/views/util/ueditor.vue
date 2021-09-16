@@ -12,7 +12,6 @@
                    :data="data">
             <template slot-scope="scope" slot="contentForm">
                 <avue-ueditor v-model="article.content" :options="options"></avue-ueditor>
-
             </template>
         </avue-crud>
     </basic-container>

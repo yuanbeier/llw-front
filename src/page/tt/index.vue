@@ -198,7 +198,6 @@
         /*background: url("/img/yy/head.png") no-repeat center ;*/
         color: #333;
         text-align: center;
-        background: url("/img/yy/dog.png") no-repeat center top ;
 
         /*background-size:100% 100%;*/
     }
