@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header style="height: 77px">
+        <el-header style="display: none">
             <el-row>
                 <div>
 <!--                    <audio ref="audio" controls  src="/img/yy/music.mp3" loop="loop"  autoplay="autoplay" hidden="true">-->
