@@ -34,6 +34,10 @@
         created() {
             this.id = this.$route.params.id
             this.$nextTick(() => {
+                // 禁用右键
+                document.oncontextmenu = new Function("event.returnValue=false");
+                // 禁用选择
+                document.onselectstart = new Function("event.returnValue=false");
                 this.init()
             })
         },
